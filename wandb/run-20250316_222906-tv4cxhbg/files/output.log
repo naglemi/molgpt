@@ -1,0 +1,24 @@
+Max len:  56
+Scaffold max len:  27
+data has 3 smiles, 94 unique characters.
+data has 1 smiles, 94 unique characters.
+/home/ubuntu/molgpt/train/trainer.py:75: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+  0%|                                                                                                                                                                                                                                                                                                                                       | 0/1 [00:00<?, ?it/s]/home/ubuntu/molgpt/train/trainer.py:100: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+epoch 1 iter 0: train loss 4.59557. lr 6.000000e-05: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.39it/s]
+Saving at epoch 1
+Traceback (most recent call last):
+  File "/home/ubuntu/molgpt/train/train.py", line 138, in <module>
+    df = trainer.train(wandb)
+  File "/home/ubuntu/molgpt/train/trainer.py", line 161, in train
+    self.save_checkpoint()
+  File "/home/ubuntu/molgpt/train/trainer.py", line 69, in save_checkpoint
+    torch.save(raw_model.state_dict(), self.config.ckpt_path)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torch/serialization.py", line 849, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torch/serialization.py", line 716, in _open_zipfile_writer
+    return container(name_or_buffer)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torch/serialization.py", line 687, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(self.name))
+RuntimeError: Parent directory ../cond_gpt/weights does not exist.

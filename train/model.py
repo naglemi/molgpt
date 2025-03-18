@@ -190,7 +190,7 @@ class GPT(nn.Module):
         optimizer = torch.optim.AdamW(optim_groups, lr=train_config.learning_rate, betas=train_config.betas)
         return optimizer
 
-    def forward(self, idx, targets=None, prop = None, scaffold = None):
+    def forward(self, idx, targets=None, prop=None, scaffold=None, return_log_probs=False):
         b, t = idx.size()
         assert t <= self.block_size, "Cannot forward, model block size is exhausted."
 
@@ -247,17 +247,25 @@ class GPT(nn.Module):
 
         logits = logits[:, num:, :]
 
-
-        # if self.config.num_props or self.config.scaffold:
-
-        #     num = int(bool(self.config.num_props)) + int(self.config.scaffold_maxlen)  #int(self.config.lstm_layers)   # int(self.config.scaffold)      # int(self.config.scaffold)
-            
-
-        # print(logits.shape)
-
-        # if we are given some desired targets also calculate the loss
+        # Calculate loss and token probabilities
         loss = None
+        log_probs = None
+        token_log_probs = None
+        
         if targets is not None:
             loss = F.cross_entropy(logits.reshape(-1, logits.size(-1)), targets.view(-1))
-
-        return logits, loss, attn_maps # (num_layers, batch_size, num_heads, max_seq_len, max_seq_len)
+            
+            # Calculate token-level probabilities for GRPO
+            if return_log_probs:
+                log_probs = F.log_softmax(logits, dim=-1)
+                # Gather the log probs for the actual target tokens
+                token_log_probs = torch.gather(
+                    log_probs, 
+                    dim=-1, 
+                    index=targets.unsqueeze(-1)
+                ).squeeze(-1)
+        
+        if return_log_probs:
+            return logits, loss, attn_maps, log_probs, token_log_probs
+        else:
+            return logits, loss, attn_maps

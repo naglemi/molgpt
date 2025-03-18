@@ -1,0 +1,41 @@
+2025-03-16 22:30:02,673 INFO    MainThread:377712 [wandb_setup.py:_flush():67] Current SDK version is 0.19.7
+2025-03-16 22:30:02,673 INFO    MainThread:377712 [wandb_setup.py:_flush():67] Configure stats pid to 377712
+2025-03-16 22:30:02,673 INFO    MainThread:377712 [wandb_setup.py:_flush():67] Loading settings from /home/ubuntu/.config/wandb/settings
+2025-03-16 22:30:02,673 INFO    MainThread:377712 [wandb_setup.py:_flush():67] Loading settings from /home/ubuntu/molgpt/wandb/settings
+2025-03-16 22:30:02,673 INFO    MainThread:377712 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-03-16 22:30:02,673 INFO    MainThread:377712 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /home/ubuntu/molgpt/wandb/run-20250316_223002-u9rdqqre/logs/debug.log
+2025-03-16 22:30:02,673 INFO    MainThread:377712 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /home/ubuntu/molgpt/wandb/run-20250316_223002-u9rdqqre/logs/debug-internal.log
+2025-03-16 22:30:02,673 INFO    MainThread:377712 [wandb_init.py:init():761] calling init triggers
+2025-03-16 22:30:02,673 INFO    MainThread:377712 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-03-16 22:30:02,673 INFO    MainThread:377712 [wandb_init.py:init():784] starting backend
+2025-03-16 22:30:02,673 INFO    MainThread:377712 [wandb_init.py:init():788] sending inform_init request
+2025-03-16 22:30:02,676 INFO    MainThread:377712 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-03-16 22:30:02,677 INFO    MainThread:377712 [wandb_init.py:init():803] backend started and connected
+2025-03-16 22:30:02,677 INFO    MainThread:377712 [wandb_init.py:init():896] updated telemetry
+2025-03-16 22:30:02,682 INFO    MainThread:377712 [wandb_init.py:init():920] communicating run to backend with 90.0 second timeout
+2025-03-16 22:30:02,960 INFO    MainThread:377712 [wandb_init.py:init():995] starting run threads in backend
+2025-03-16 22:30:03,063 INFO    MainThread:377712 [wandb_run.py:_console_start():2377] atexit reg
+2025-03-16 22:30:03,064 INFO    MainThread:377712 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-03-16 22:30:03,064 INFO    MainThread:377712 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-03-16 22:30:03,064 INFO    MainThread:377712 [wandb_run.py:_redirect():2317] Redirects installed.
+2025-03-16 22:30:03,067 INFO    MainThread:377712 [wandb_init.py:init():1037] run started, returning control to user process
+2025-03-16 22:30:05,901 WARNING MsgRouterThr:377712 [router.py:message_loop():77] message_loop has been closed
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/wandb/sdk/interface/router_sock.py", line 28, in _read_message
+    resp = self._sock_client.read_server_response(timeout=1)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 285, in read_server_response
+    data = self._read_packet_bytes(timeout=timeout)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 270, in _read_packet_bytes
+    raise SockClientClosedError
+wandb.sdk.lib.sock_client.SockClientClosedError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/wandb/sdk/interface/router.py", line 70, in message_loop
+    msg = self._read_message()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/wandb/sdk/interface/router_sock.py", line 30, in _read_message
+    raise MessageRouterClosedError from e
+wandb.sdk.interface.router.MessageRouterClosedError
+2025-03-16 22:30:05,902 INFO    MsgRouterThr:377712 [mailbox.py:close():115] Closing mailbox, abandoning 1 handles.

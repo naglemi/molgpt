@@ -1,6 +1,6 @@
 import torch
 from torch.utils.data import Dataset
-from utils import SmilesEnumerator
+from train.utils import SmilesEnumerator
 import numpy as np
 import re
 

@@ -15,7 +15,7 @@ from torch.optim.lr_scheduler import LambdaLR
 from torch.utils.data.dataloader import DataLoader
 from torch.cuda.amp import GradScaler
 
-from utils import check_novelty, sample, canonic_smiles
+from generate.utils import check_novelty, sample, canonic_smiles
 from moses.utils import get_mol
 import re
 import pandas as pd

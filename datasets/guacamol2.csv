@@ -1,0 +1,6 @@
+smiles,scaffold_smiles,source,logp,sas,qed,tpsa
+CC1=CC=CC=C1NC(=O)C2=CC=CO2,c1ccoc1,train,2.1,2.5,0.65,50.0
+CC1=CC(=C(C=C1)O)C(=O)NC2=CC=C(C=C2)Cl,c1ccc(cc1)Cl,train,3.2,3.0,0.7,65.0
+CC1=CC=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCOCC3,c1ccc(cc1)CN1CCOCC1,train,2.7,3.2,0.75,75.0
+CC1=CC=C(C=C1)NC(=O)C2=CC=C(C=C2)C(=O)O,c1ccc(cc1)C(=O)O,val,1.9,2.8,0.8,80.0
+CC1=CC=C(C=C1)NC(=O)C2=CC=C(C=C2)S(=O)(=O)N,c1ccc(cc1)S(=O)(=O)N,test,2.5,3.1,0.6,90.0
