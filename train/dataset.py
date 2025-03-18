@@ -1,6 +1,6 @@
 import torch
 from torch.utils.data import Dataset
-from train.utils import SmilesEnumerator
+from utils import SmilesEnumerator  # Changed from 'train.utils' to fix import path issue
 import numpy as np
 import re
 
