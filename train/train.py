@@ -15,6 +15,11 @@ from trainer import Trainer, TrainerConfig
 import math
 from utils import SmilesEnumerator
 import re
+
+# Configure RDKit to suppress SMILES parsing errors
+# See .scrolls/smiles_error_suppression.md for details
+from rdkit import RDLogger
+RDLogger.DisableLog('rdApp.*')
 if __name__ == '__main__':
     from dataset import SmileDataset
 
