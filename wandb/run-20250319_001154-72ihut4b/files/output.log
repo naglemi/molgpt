@@ -1,0 +1,10 @@
+Max len:  56
+Scaffold max len:  43
+data has 800 smiles, 94 unique characters.
+data has 100 smiles, 94 unique characters.
+/home/ubuntu/molgpt/train/trainer.py:75: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+  0%|          | 0/3 [00:00<?, ?it/s]/home/ubuntu/molgpt/train/trainer.py:100: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+epoch 1 iter 2: train loss 2.80879. lr 6.000000e-05: 100%|██████████| 3/3 [00:00<00:00,  3.28it/s]
+Saving at epoch 1

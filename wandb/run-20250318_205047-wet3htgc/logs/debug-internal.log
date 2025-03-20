@@ -1,0 +1,15 @@
+{"time":"2025-03-18T20:50:47.851969159Z","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"/home/ubuntu/molgpt/wandb/run-20250318_205047-wet3htgc/logs/debug-core.log"}
+{"time":"2025-03-18T20:50:47.955163501Z","level":"INFO","msg":"created new stream","id":"wet3htgc"}
+{"time":"2025-03-18T20:50:47.955197862Z","level":"INFO","msg":"stream: started","id":"wet3htgc"}
+{"time":"2025-03-18T20:50:47.955226084Z","level":"INFO","msg":"writer: Do: started","stream_id":"wet3htgc"}
+{"time":"2025-03-18T20:50:47.955285646Z","level":"INFO","msg":"sender: started","stream_id":"wet3htgc"}
+{"time":"2025-03-18T20:50:47.955336419Z","level":"INFO","msg":"handler: started","stream_id":"wet3htgc"}
+{"time":"2025-03-18T20:50:48.223044222Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-18T20:50:59.225472519Z","level":"INFO","msg":"stream: closing","id":"wet3htgc"}
+{"time":"2025-03-18T20:50:59.22550261Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-18T20:50:59.22613077Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-18T20:50:59.507689853Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-18T20:50:59.626672288Z","level":"INFO","msg":"handler: closed","stream_id":"wet3htgc"}
+{"time":"2025-03-18T20:50:59.62673311Z","level":"INFO","msg":"sender: closed","stream_id":"wet3htgc"}
+{"time":"2025-03-18T20:50:59.62672706Z","level":"INFO","msg":"writer: Close: closed","stream_id":"wet3htgc"}
+{"time":"2025-03-18T20:50:59.626817755Z","level":"INFO","msg":"stream: closed","id":"wet3htgc"}

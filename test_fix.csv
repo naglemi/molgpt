@@ -1,1 +1,3 @@
 molecule,smiles,epoch
+<rdkit.Chem.rdchem.Mol object at 0x7baf700be570>,CCCC=CCC1PCCCC2OC21CCOC=C[NH+]CCCCCCC=CCCCC,0
+<rdkit.Chem.rdchem.Mol object at 0x7baf6573e0a0>,CCCC1CCCCCCCC[NH+]=CC=CCCCCCCP=CCCC1CCCCCOO,0
