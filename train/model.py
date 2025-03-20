@@ -247,6 +247,16 @@ class GPT(nn.Module):
 
         logits = logits[:, num:, :]
 
+        # ================================================================
+        # ORGANIZATIONAL POLICY FOR LOG PROBABILITY COMPUTATION
+        # ================================================================
+        # 1. THIS IS THE ONLY APPROVED IMPLEMENTATION FOR LOG PROBABILITIES
+        # 2. DO NOT CREATE SEPARATE METHODS FOR LOG PROBABILITY COMPUTATION
+        # 3. DO NOT MODIFY THIS IMPLEMENTATION
+        # 4. ALL LOG PROBABILITY NEEDS MUST USE THIS FORWARD METHOD
+        #    WITH return_log_probs=True
+        # ================================================================
+        
         # Calculate loss and token probabilities
         loss = None
         log_probs = None
@@ -255,10 +265,12 @@ class GPT(nn.Module):
         if targets is not None:
             loss = F.cross_entropy(logits.reshape(-1, logits.size(-1)), targets.view(-1))
             
-            # Calculate token-level probabilities for GRPO
+            # OFFICIAL LOG PROBABILITY COMPUTATION
+            # Returns both full distribution and target token probabilities
             if return_log_probs:
+                # Get log probabilities for full distribution
                 log_probs = F.log_softmax(logits, dim=-1)
-                # Gather the log probs for the actual target tokens
+                # Get log probabilities of actual target tokens
                 token_log_probs = torch.gather(
                     log_probs, 
                     dim=-1, 
@@ -269,3 +281,8 @@ class GPT(nn.Module):
             return logits, loss, attn_maps, log_probs, token_log_probs
         else:
             return logits, loss, attn_maps
+
+    # ================================================================
+    # ORGANIZATIONAL POLICY: DO NOT ADD LOG PROBABILITY METHODS
+    # Use forward() with return_log_probs=True instead
+    # ================================================================
